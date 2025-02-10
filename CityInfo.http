@@ -1,0 +1,34 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@schema=https
+@hostname=localhost
+@port=44385
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+
+###
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Accept:application/xml
+
+###
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6IktldmluIiwiZmFtaWx5X25hbWUiOiJEb2NrIiwiY2l0eSI6IlN1cnVsZXJlZCIsIm5iZiI6MTczOTAyMjEyMiwiZXhwIjoxNzM5MDI1NzIyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NSJ9.gGEWrcW3DEJ0797VnPxvVw-KrA7IICpluvXsaykmE-A
+
+###
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest
+Accept:application/json
+Content-Type:application/json
+
+{
+  "name":"a tennis",
+  "description":"a board"
+}
+
+###
+POST {{schema}}://{{hostname}}:{{port}}/api/authentication/authenticate
+Accept:application/json
+Content-Type:application/json
+
+{
+  "name":"a tennis",
+  "password":"a board"
+}
